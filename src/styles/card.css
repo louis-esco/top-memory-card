@@ -1,0 +1,24 @@
+.poke-card-btn {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  justify-items: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 20px 10px 20px;
+  background-color: #dcdcdc;
+  border-radius: 20px;
+  border: none;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.poke-img img {
+  max-width: 100%;
+  height: 200px;
+}
+
+.poke-name {
+  font-size: 1.7rem;
+  color: #4c4c4c;
+}
