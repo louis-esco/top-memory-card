@@ -1,5 +1,5 @@
 import Card from "./Card";
-import { useState } from "react";
+import "../styles/grid.css";
 
 export default function Grid({ pokeData, handleClick }) {
   return (
