@@ -1,5 +1,10 @@
+@font-face {
+  font-family: "PokemonFont";
+  src: url(./assets/PokemonFont.ttf) format("truetype");
+}
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: PokemonFont, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
