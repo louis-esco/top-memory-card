@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import Grid from "./components/Grid";
+import ScoreBoard from "./components/ScoreBoard";
 
 function App() {
   const [currentScore, setCurrentScore] = useState(0);
@@ -43,12 +44,12 @@ function App() {
       }
       setPokeData(pokeArr);
     };
-
     fetchPokeData();
   }, []);
 
   return (
     <>
+      <ScoreBoard currentScore={currentScore} maxScore={maxScore} />
       <Grid pokeData={pokeData} handleClick={handleClick} />
     </>
   );
