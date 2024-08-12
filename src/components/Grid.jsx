@@ -1,7 +1,7 @@
 import Card from "./Card";
 import "../styles/grid.css";
 
-export default function Grid({ pokeData, handleClick }) {
+export default function Grid({ pokeData, handleClick, flipCard }) {
   return (
     <div className="poke-grid">
       {pokeData.map((poke) => (
@@ -11,6 +11,7 @@ export default function Grid({ pokeData, handleClick }) {
           pokeName={poke.name}
           spriteUrl={poke.spriteUrl}
           handleClick={handleClick}
+          flipCard={flipCard}
         />
       ))}
     </div>
