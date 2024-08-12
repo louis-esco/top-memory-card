@@ -1,4 +1,22 @@
-.poke-card-btn {
+.poke-card {
+  position: relative;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  perspective: 1500px;
+  border-radius: 20px;
+  transform-style: preserve-3d;
+}
+
+.card-front,
+.card-back {
+  backface-visibility: hidden;
+  transition: transform 500ms;
+  border-radius: 20px;
+}
+
+.card-front {
+  padding: 30px 20px 10px 20px;
+  background-color: #f9f9f9;
+  border: none;
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -6,11 +24,27 @@
   justify-items: center;
   align-items: center;
   gap: 20px;
-  padding: 20px 20px 10px 20px;
-  background-color: #dcdcdc;
-  border-radius: 20px;
-  border: none;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  width: 100%;
+}
+
+.card-front:hover {
+  opacity: 0.9;
+}
+
+.card-back {
+  transform: rotateY(-179.9deg);
+  background-color: #1b2750;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-back img {
+  max-width: 40%;
 }
 
 .poke-img img {
@@ -20,6 +54,16 @@
 
 .poke-name {
   font-size: 1.7rem;
-  color: #4c4c4c;
+  color: #3c3c3c;
+  color: #f8ce46;
+  -webkit-text-stroke: 0.1rem #406ab6;
   font-family: PokemonFont;
+}
+
+.flip .card-front {
+  transform: rotateY(179.9deg);
+}
+
+.flip .card-back {
+  transform: rotateY(0deg);
 }
