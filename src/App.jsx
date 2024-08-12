@@ -9,21 +9,29 @@ function App() {
   const pokeIndexes = [4, 7, 25, 39, 54, 79, 116, 133, 143, 151, 155, 183];
   const [pokeData, setPokeData] = useState([]);
   const [clickedPoke, setClickedPoke] = useState([]);
+  const [flipCard, setFlipCard] = useState(false);
 
   function randomSort(arr) {
     return arr.sort(() => Math.random() - 0.5);
   }
 
   function handleClick(e) {
-    if (clickedPoke.includes(e.currentTarget.id)) {
-      setCurrentScore(0);
-      setClickedPoke([]);
-    } else {
-      setClickedPoke([...clickedPoke, e.currentTarget.id]);
-      setCurrentScore(currentScore + 1);
-      if (maxScore <= currentScore) setMaxScore(currentScore + 1);
-    }
-    setPokeData(randomSort(pokeData));
+    setFlipCard(true);
+    const clicked = e.currentTarget;
+    setTimeout(() => {
+      if (clickedPoke.includes(clicked.id)) {
+        setCurrentScore(0);
+        setClickedPoke([]);
+      } else {
+        setClickedPoke([...clickedPoke, clicked.id]);
+        setCurrentScore(currentScore + 1);
+        if (maxScore <= currentScore) setMaxScore(currentScore + 1);
+      }
+      setPokeData(randomSort(pokeData));
+      setTimeout(() => {
+        setFlipCard(false);
+      }, 400);
+    }, 400);
   }
 
   window.poke = pokeData;
@@ -50,7 +58,7 @@ function App() {
   return (
     <>
       <ScoreBoard currentScore={currentScore} maxScore={maxScore} />
-      <Grid pokeData={pokeData} handleClick={handleClick} />
+      <Grid pokeData={pokeData} handleClick={handleClick} flipCard={flipCard} />
     </>
   );
 }
