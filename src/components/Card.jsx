@@ -1,5 +1,5 @@
-import { useEffect } from "react";
 import "../styles/card.css";
+import pokeball from "/src/assets/pokeball.png";
 
 export default function Card({
   pokeName,
@@ -20,7 +20,7 @@ export default function Card({
           </div>
         </button>
         <div className="card-back">
-          <img src="/src/assets/pokeball.png" alt="" />
+          <img src={pokeball} alt="" />
         </div>
       </div>
     </>
